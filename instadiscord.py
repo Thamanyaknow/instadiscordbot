@@ -115,6 +115,11 @@ async def shutdown(*args):
 async def stopaccepting(*args):
     STOP_ACCEPT = True
     await bot.say("Stopped accepting!")
+    
+@bot.command()
+async def setaccept(*args):
+    STOP_ACCEPT = False
+    await bot.say("Set accepting!")
 
 @bot.command()
 async def acceptvv(username, password, threads):
