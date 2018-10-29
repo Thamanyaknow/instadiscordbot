@@ -137,22 +137,25 @@ async def acceptvv(username, password, threads):
     total_vv = 0
     t0 = time.time()
 
-    while True:
-        status = accept(api, threads)
+    try:
+        while True:
+            status = accept(api, threads)
 
-        if status == 0:
-            break
+            if status == 0:
+                break
 
-        total_vv += status
+            total_vv += status
 
-        if 7990 < total_vv < 8010:
-            print("Waiting...")
-            asyncio.sleep(60 * 6)
+            if 7990 < total_vv < 8010:
+                print("Waiting...")
+                asyncio.sleep(60 * 6)
 
-        asyncio.sleep(1)
+            asyncio.sleep(1)
 
-        if STOP_ACCEPT:
-            break
+            if STOP_ACCEPT:
+                break
+    except Exception as e:
+        await bot.say(str(e))
 
     t1 = time.time()
     time_difference = t1 - t0
