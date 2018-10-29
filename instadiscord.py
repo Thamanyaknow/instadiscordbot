@@ -16,7 +16,7 @@ There are a number of utility commands being showcased here.'''
 bot = commands.Bot(command_prefix='-', description=description)
 
 def try_login(username, password):
-    api = InstagramAPII(username, password)
+    api = InstagramAPI(username, password)
     if api.login():
         return api
     else:
