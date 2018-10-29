@@ -131,6 +131,8 @@ async def acceptvv(username, password, threads):
     if not api:
         await bot.say("Incorrect login credentials!")
         return
+    
+    await bot.say("Logged in!")
 
     total_vv = 0
     t0 = time.time()
