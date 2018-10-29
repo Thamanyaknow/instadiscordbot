@@ -6,6 +6,7 @@ from InstagramAPI import InstagramAPI
 import time
 import threading
 import asyncio
+import os
 
 STOP_ACCEPT = False
 
@@ -202,4 +203,4 @@ async def _bot():
     """Is the bot cool?"""
     await bot.say('Yes, the bot is cool.')
 
-bot.run('NTA2NTMyMDg5MDE4MTg3Nzg3.Drjg9w.EtjXBdMRIa2M_9X5cQOkQS2Ht0s')
+bot.run(os.getenv("TOKEN"))
