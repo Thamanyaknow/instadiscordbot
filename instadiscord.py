@@ -137,8 +137,8 @@ async def acceptvv(username, password, threads):
     total_vv = 0
     t0 = time.time()
 
-    try:
-        while True:
+    while True:
+        try:
             status = accept(api, threads)
 
             if status == 0:
@@ -154,8 +154,8 @@ async def acceptvv(username, password, threads):
 
             if STOP_ACCEPT:
                 break
-    except Exception as e:
-        await bot.say(str(e))
+        except Exception as e:
+            await bot.say(str(e))
 
     t1 = time.time()
     time_difference = t1 - t0
