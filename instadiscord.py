@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import random
 import json
-import InstagramAPII
+from InstagramAPII import InstagramAPI
 import time
 import threading
 import asyncio
