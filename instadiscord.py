@@ -147,7 +147,7 @@ async def acceptvv(username, password, threads):
             total_vv += status
 
             if 7990 < total_vv < 8010:
-                print("Waiting...")
+                await bot.say("Waiting...")
                 asyncio.sleep(60 * 6)
 
             asyncio.sleep(1)
